@@ -7,6 +7,11 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
+        stage('Check Directory') {
+            steps {
+                sh 'pwd'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
